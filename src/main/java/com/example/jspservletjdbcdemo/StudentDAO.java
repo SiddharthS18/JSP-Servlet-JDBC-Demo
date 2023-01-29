@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentDAO {
     Connection con;
@@ -47,6 +49,24 @@ public class StudentDAO {
         }
         return s;
     }
+
+    public List<Student> showStudents(){
+        List<Student> list = new ArrayList<Student>();
+
+        try{
+            ResultSet rs = st.executeQuery("SELECT * FROM student_details");
+            while(rs.next()){
+                int id = rs.getInt("UserID");
+                String name = rs.getString("Name");
+                list.add(new Student(id,name));
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        return list;
+    }
+
     public void addStudent(int id, String name){
         //Student s = new Student(id,name);
         try{

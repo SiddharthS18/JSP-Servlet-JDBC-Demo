@@ -19,5 +19,8 @@ To add Student -
     <input type="text" name="Name">
     <input type="submit">
 </form>
+<form action="ShowStudents">
+    <input type="submit" value="Show Students">
+</form>
 </body>
 </html>
