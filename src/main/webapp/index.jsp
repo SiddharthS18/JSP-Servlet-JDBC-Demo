@@ -2,12 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>School Students</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Welcome to School Database!" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<form action="GetStudent">
+    <input type="text" name="UserID">
+    <input type="submit">
+</form>
 </body>
 </html>
